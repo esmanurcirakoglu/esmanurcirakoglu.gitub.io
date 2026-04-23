@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADS-352 Örnek Sitesi | Dijital Kimlik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --accent-color: #6366f1;
+            --text-main: #ffffff;
+            --text-secondary: #a1a1aa;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Arka Plan Dekorasyonu */
+        .blob {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(60px);
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigasyon */
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        /* Hero Bölümü */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to bottom, #fff 40%, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* Kartlar / Bölümler */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 5rem 0;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            color: var(--accent-color);
+        }
+
+        /* İletişim Butonu */
+        .cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--text-main);
+            color: var(--bg-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* Mobil Düzenleme */
+        @media (max-width: 768px) {
+            header { height: auto; padding: 4rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blob"></div>
+
+    <div class="container">
+        <nav>
+            <div class="logo">KİŞİSEL.</div>
+            <div style="color: var(--text-secondary);">2026 Edition</div>
+        </nav>
+
+        <header>
+            <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--accent-color); font-weight: 600; margin-bottom: 1rem;">Merhaba, ben buradayım</p>
+            <h1> ADS 352 <br><em>deneyimlere</em Açık Kaynak Yazılım Geliştirme Dersi </h1>
+            <p class="hero-sub">Yaratıcılığın ve teknolojinin kesiştiği noktada, estetik ve fonksiyonel çözümler üreten bir vizyoner.</p>
+            <div>
+                <a href="mailto:merhaba@adresin.com" class="cta">İletişime Geç</a>
+            </div>
+        </header>
+
+        <main class="grid">
+            <div class="card">
+                <h3>Vizyon</h3>
+                <p>Karmaşıklığı sadeleştirerek, kullanıcı odaklı ve kalıcı izler bırakan dijital yapılar inşa etmek en büyük tutkum.</p>
+            </div>
+            <div class="card">
+                <h3>Yetenekler</h3>
+                <p>Modern Web Teknolojileri, Kullanıcı Deneyimi (UX) Tasarımı, Marka Kimliği Oluşturma ve Stratejik Planlama.</p>
+            </div>
+            <div class="card">
+                <h3>Projeler</h3>
+                <p>Sınırları zorlayan, yenilikçi ve estetik kaygısı yüksek projeler üzerinde çalışmaktan keyif alıyorum.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Tüm Hakları Saklıdır. Tasarım ve Kodlama ile hazırlanmıştır.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+          
+         
+      
+
+            
